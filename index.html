@@ -152,16 +152,16 @@
         }
         
         .nav-links a::after {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background-color: var(--gold-accent);
-              transform: scaleX(0);
-              transform-origin: bottom right;
-              transition: transform 0.25s ease-out;
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 100%;
+             height: 2px;
+             background-color: var(--gold-accent);
+             transform: scaleX(0);
+             transform-origin: bottom right;
+             transition: transform 0.25s ease-out;
         }
 
         .nav-links a:hover::after {
@@ -233,7 +233,7 @@
             background-color: transparent;
         }
         
-        /* Floating WhatsApp Button */
+        /* Floating Buttons */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -253,6 +253,30 @@
         }
 
         .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(201, 161, 74, 0.4);
+        }
+        
+        /* --- NEW: Style for Call Button --- */
+        .call-float {
+            position: fixed;
+            bottom: 105px; /* Positioned above the WhatsApp button (30px + 60px height + 15px gap) */
+            right: 30px;
+            background-color: var(--navy-blue);
+            color: var(--gold-accent);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: var(--transition-fast);
+        }
+
+        .call-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(201, 161, 74, 0.4);
         }
@@ -824,30 +848,48 @@
                 <h2 class="section-title animate-on-scroll">Exclusive Listings</h2>
                 <div class="project-slider">
                     <div class="project-card animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Villa">
+                        <img src="https://accuraterealty.in/wp-content/uploads/2025/02/3ff673d522326a9090b84327b3da9cf3-1.jpg" alt="Luxury Villa">
                         <div class="project-card-info">
-                            <h3>The Royal Crest</h3>
-                            <p>Dwarka Expressway, Gurugram • Price On Request</p>
+                            <h3>Whiteland Westin Residences</h3>
+                            <p>Sector 103, Gurugram • Price On Request</p>
+                        </div>
+                        <a href="#" class="project-card-overlay">
+                            <span class="details-button">View Details</span>
+                        </a>
+                    </div><div class="project-card animate-on-scroll">
+                        <img src="https://d16gdc5rm7f21b.cloudfront.net/uploads/1734154358265-front.jpg" alt="Luxury Villa">
+                        <div class="project-card-info">
+                            <h3>ELAN THE EMPEROR</h3>
+                            <p>Sector 106, Gurugram • Price On Request</p>
+                        </div>
+                        <a href="#" class="project-card-overlay">
+                            <span class="details-button">View Details</span>
+                        </a>
+                    </div><div class="project-card animate-on-scroll">
+                        <img src="https://www.m3mproperties.com/project_pics/m3m-capital-walk-banner-41689.jpg" alt="Luxury Villa">
+                        <div class="project-card-info">
+                            <h3>M3M Capital Walk</h3>
+                            <p>Sector 113, Gurugram • Price On Request</p>
                         </div>
                         <a href="#" class="project-card-overlay">
                             <span class="details-button">View Details</span>
                         </a>
                     </div>
                     <div class="project-card animate-on-scroll" style="transition-delay: 0.2s;">
-                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Modern Residence">
+                        <img src="https://www.starestate.in/api/star_estate/project_gallery/2024-11-20T12-22-13_onedxpbanner.webp" alt="Modern Residence">
                         <div class="project-card-info">
-                            <h3>Aravalli Greens</h3>
-                            <p>Jaipur, Rajasthan • ₹ 8.5 Cr Onwards</p>
+                            <h3>Smart World One DXP</h3>
+                            <p>Sector 113, Gurugram • Price On Request</p>
                         </div>
                          <a href="#" class="project-card-overlay">
                             <span class="details-button">View Details</span>
                         </a>
                     </div>
                     <div class="project-card animate-on-scroll" style="transition-delay: 0.4s;">
-                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial Property">
+                        <img src="https://res.cloudinary.com/diwgt4zc8/image/upload/f_auto,q_auto/v1/elan-miracle/gallery/image1" alt="Commercial Property">
                         <div class="project-card-info">
-                            <h3>Ganga View Plaza</h3>
-                            <p>Haridwar, Uttarakhand • Price On Request</p>
+                            <h3>Elan Miracle</h3>
+                            <p>Sector 84, Gurugram • Price On Request</p>
                         </div>
                          <a href="#" class="project-card-overlay">
                             <span class="details-button">View Details</span>
@@ -881,14 +923,15 @@
              <div class="container">
                 <h2 class="section-title animate-on-scroll">Find Us Across India</h2>
                 <div class="locations-grid">
-                    <div class="location-card animate-on-scroll">
-                        <div class="location-card-bg" style="background-image: url(https://www.anaheetahomes.com/images/blogs/icons/409520536.jpg);"></div>
-                        <div class="location-card-content"><h3>Gurugram</h3></div>
-                    </div>
                     <div class="location-card animate-on-scroll" style="transition-delay: 0.1s;">
                         <div class="location-card-bg" style="background-image: url(https://media.istockphoto.com/id/1273342062/photo/bird-eye-view-a-city-of-ahmedabad-and-blue-of-sky-with-clouds-in-the-evening.jpg?s=612x612&w=0&k=20&c=W6fZFdQGGWr5spFtTtD7wLhJldQAzpiatO1LlNZZ6WY=);"></div>
                         <div class="location-card-content"><h3>Dwarka Expressway</h3></div>
                     </div>
+                    <div class="location-card animate-on-scroll">
+                        <div class="location-card-bg" style="background-image: url(https://www.anaheetahomes.com/images/blogs/icons/409520536.jpg);"></div>
+                        <div class="location-card-content"><h3>Gurugram</h3></div>
+                    </div>
+                    
                     <div class="location-card animate-on-scroll" style="transition-delay: 0.2s;">
                          <div class="location-card-bg" style="background-image: url(https://media.istockphoto.com/id/2171304376/photo/high-angle-view-of-bridges-and-buildings-in-city.jpg?s=612x612&w=0&k=20&c=E-VgwoQof72aoUsBuAI3ANw466hxKiRJrqUM1Uk2vz0=);"></div>
                         <div class="location-card-content"><h3>Haridwar</h3></div>
@@ -963,20 +1006,22 @@
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
-                        <p>unbanedgerealtors15@gmail.com</p>
+                        <p>urbanedgerealtors15@gmail.com</p>
                         <p>+91 9971706346</p>
+                        <p>Sector 103,Dwarka expressway,Gurugram,122017</p>
                     </div>
                     <div class="social-icons">
-                        <a href="#"><i class="ph-fill ph-whatsapp-logo"></i></a>
-                        <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
-                        <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
-                        <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
+                        <a href="https://www.instagram.com/urbanedgerealtors/"><i class="ph-fill ph-instagram-logo"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <a href="tel:+919971706346" class="call-float" aria-label="Call Now">
+        <i class="ph-fill ph-phone-call"></i>
+    </a>
+    
     <a href="https://wa.me/919971706346" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="ph-fill ph-whatsapp-logo"></i>
     </a>
