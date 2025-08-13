@@ -48,6 +48,10 @@
             line-height: 1.7;
         }
         
+        body.no-scroll {
+            overflow: hidden;
+        }
+        
         /* Utility Classes */
         .container {
             max-width: 1200px;
@@ -371,6 +375,123 @@
             .footer-col.about p { margin: 0 auto; }
             .social-icons { margin-top: 20px; }
         }
+        
+        /* ------------------------- */
+        /* --- 9. POPUP CONTACT FORM --- */
+        /* ------------------------- */
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 26, 47, 0.85); /* Use --navy-blue with alpha */
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+        }
+
+        .popup-overlay.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .contact-popup {
+            background-color: var(--pure-white);
+            color: var(--navy-blue);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.4s ease-out;
+        }
+        
+        .popup-overlay.is-active .contact-popup {
+            transform: scale(1);
+        }
+
+        .close-popup-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--navy-blue);
+            transition: var(--transition-fast);
+        }
+
+        .close-popup-btn:hover {
+            color: var(--gold-accent);
+            transform: rotate(90deg);
+        }
+
+        .contact-popup h3 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--navy-blue);
+        }
+        
+        .contact-popup p {
+            margin-bottom: 30px;
+            color: var(--navy-blue);
+            opacity: 0.8;
+        }
+
+        .contact-popup .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact-popup input,
+        .contact-popup textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .contact-popup input:focus,
+        .contact-popup textarea:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+            box-shadow: 0 0 0 3px rgba(201, 161, 74, 0.2);
+        }
+
+        .btn-submit-popup {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--navy-blue);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 5px;
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .btn-submit-popup:hover {
+            background-color: var(--gold-accent);
+            color: var(--navy-blue);
+        }
+
     </style>
 </head>
 <body>
@@ -384,7 +505,7 @@
                     <a href="https://vivexatech.github.io/Urban-Edge/#projects">Properties</a>
                     <a href="https://vivexatech.github.io/Urban-Edge/#locations">Locations</a>
                     <a href="https://vivexatech.github.io/Urban-Edge/#why-us">Why Us</a>
-                <a href="#">Contact</a>
+                <a href="#" class="js-open-popup">Contact</a>
             </nav>
         </div>
     </header>
@@ -482,14 +603,14 @@
                         <li><a href="#">About</a></li>
                         <li><a href="#">Properties</a></li>
                         <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" class="js-open-popup">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
-                        <p>info@urbanedge.com</p>
-                        <p>+91 987 654 3210</p>
+                        <p>unbanedgerealtors15@gmail.com</p>
+                        <p>+91 9971706346</p>
                     </div>
                     <div class="social-icons">
                         <a href="#"><i class="ph-fill ph-whatsapp-logo"></i></a>
@@ -502,7 +623,34 @@
         </div>
     </footer>
 
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="contact-popup" id="contact-popup">
+            <button class="close-popup-btn" id="close-popup-btn" aria-label="Close form">
+                <i class="ph ph-x"></i>
+            </button>
+            <h3>Get In Touch</h3>
+            <p>Fill out the form below and we'll get back to you shortly.</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" id="popup-name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="popup-email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="popup-phone" name="phone" placeholder="Your Phone (Optional)">
+                </div>
+                <div class="form-group">
+                    <textarea id="popup-message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn-submit-popup">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
     <script>
+        // --- ON-SCROLL ANIMATION LOGIC ---
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
         const observer = new IntersectionObserver((entries) => {
@@ -519,8 +667,48 @@
         animatedElements.forEach(el => {
             observer.observe(el);
         });
+
+        // --- POPUP CONTACT FORM LOGIC ---
+        const openPopupButtons = document.querySelectorAll('.js-open-popup');
+        const closePopupButton = document.getElementById('close-popup-btn');
+        const popupOverlay = document.getElementById('popup-overlay');
+
+        const openPopup = () => {
+            popupOverlay.classList.add('is-active');
+            document.body.classList.add('no-scroll'); // Prevent background scrolling
+        };
+
+        const closePopup = () => {
+            popupOverlay.classList.remove('is-active');
+            document.body.classList.remove('no-scroll');
+        };
+
+        openPopupButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent link from navigating
+                openPopup();
+            });
+        });
+
+        if(closePopupButton && popupOverlay) {
+            closePopupButton.addEventListener('click', closePopup);
+
+            // Close popup when clicking the overlay (background)
+            popupOverlay.addEventListener('click', (e) => {
+                if (e.target === popupOverlay) {
+                    closePopup();
+                }
+            });
+
+            // Close popup with the 'Escape' key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && popupOverlay.classList.contains('is-active')) {
+                    closePopup();
+                }
+            });
+        }
+
     </script>
 </body>
 
 </html>
-
