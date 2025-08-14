@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Urban Edge Realtors - Luxury Homes & Commercial Spaces in Gurugram</title>
- 
-<!-- SEO Meta Tags -->
+
 <meta name="description" content="Urban Edge Realtors specializes in luxury homes, prime plots, and premium commercial spaces along Dwarka Expressway, Gurugram. Your trusted real estate partner for high-value properties.">
 <meta name="keywords" content="Urban Edge Realtors, Gurugram Real Estate, Dwarka Expressway Property, Luxury Homes Gurugram, Premium Plots, Commercial Property Gurugram, Property Investment, High-End Realty">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Urban Edge Realtors">
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Urban Edge Realtors - Luxury Homes & Commercial Spaces in Gurugram">
 <meta property="og:description" content="Discover luxury residences, prime plots, and premium commercial spaces along Dwarka Expressway, Gurugram with Urban Edge Realtors.">
@@ -19,7 +17,6 @@
 <meta property="og:url" content="https://www.urbanedgerealtors.com">
 <meta property="og:site_name" content="Urban Edge Realtors">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Urban Edge Realtors - Luxury Homes & Commercial Spaces in Gurugram">
 <meta name="twitter:description" content="Luxury homes, premium plots, and commercial spaces along Dwarka Expressway, Gurugram.">
@@ -34,12 +31,10 @@
 
 
     
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
-<!-- Icons -->
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <script type="application/ld+json">
@@ -62,8 +57,8 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "28.5136",
-    "longitude": "77.0283"
+    "latitude": "28°30'49.9",
+    "longitude": "77°01'28.7"
   },
   "openingHoursSpecification": [
     {
@@ -125,6 +120,7 @@
             background-color: var(--light-champagne);
             color: var(--navy-blue);
             line-height: 1.6;
+            overflow-x: hidden; /* This prevents horizontal scrolling */
         }
         
         body.no-scroll {
@@ -181,6 +177,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            padding-top: 2vh;
             width: 100%;
             height: var(--header-height);
             z-index: 1000;
@@ -647,7 +644,7 @@
         
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
             gap: 50px;
         }
         
@@ -957,7 +954,7 @@
                         <img src="https://www.m3mproperties.com/project_pics/m3m-capital-walk-banner-41689.jpg" alt="Luxury Villa">
                         <div class="project-card-info">
                             <h3>M3M Capital Walk</h3>
-                            <p>Sector 113, Gurugram • Price On Request</p>
+                            <p>Sector 113, GurGURUGRAM • Price On Request</p>
                         </div>
                         <a href="#" class="project-card-overlay">
                             <span class="details-button">View Details</span>
@@ -1073,16 +1070,6 @@
                     <p>Your premier partner in luxury real estate, connecting discerning clients with exceptional properties across India.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#projects">Properties</a></li>
-                        <li><a href="#highlights">Services</a></li>
-                        <li><a href="#" class="js-open-popup">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p>urbanedgerealtors15@gmail.com</p>
@@ -1092,6 +1079,10 @@
                     <div class="social-icons">
                         <a href="https://www.instagram.com/urbanedgerealtors/"><i class="ph-fill ph-instagram-logo"></i></a>
                     </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Find Us</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3505.860051614505!2d77.02463999999999!3d28.513858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDMwJzQ5LjkiTiA3N8KwMDEnMjguNyJF!5e0!3m2!1sen!2sin!4v1755145885733!5m2!1sen!2sin" width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -1112,7 +1103,8 @@
             </button>
             <h3>Get In Touch</h3>
             <p>Fill out the form below and we'll get back to you shortly.</p>
-            <form action="#" method="POST">
+            <form action="https://formsubmit.co/urbanedgerealtors15@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
                 <div class="form-group">
                     <input type="text" id="popup-name" name="name" required placeholder="Your Name">
                 </div>
@@ -1120,7 +1112,7 @@
                     <input type="email" id="popup-email" name="email" required placeholder="Your Email">
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="popup-phone" name="phone" placeholder="Your Phone (Optional)">
+                    <input type="tel" id="popup-phone" name="phone" required placeholder="Your Phone ">
                 </div>
                 <div class="form-group">
                     <textarea id="popup-message" name="message" rows="5" required placeholder="Your Message"></textarea>
@@ -1241,8 +1233,3 @@
 </body>
 
 </html>
-
-
-
-
-
