@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.urbanedgerealtors.com/index.html</loc></url>
-  <url><loc>https://www.urbanedgerealtors.com/about.html</loc></url>
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.urbanedgerealtors.com/</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.urbanedgerealtors.com/about</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Logo Image (Optional) -->
+  <url>
+    <loc>https://www.urbanedgerealtors.com/web-app-manifest-192x192.png</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
